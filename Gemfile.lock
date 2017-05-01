@@ -3,7 +3,7 @@ GEM
   specs:
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
-    backports (3.7.0)
+    backports (3.8.0)
     capybara (2.13.0)
       addressable
       mime-types (>= 1.16)
@@ -23,6 +23,7 @@ GEM
     multi_json (1.12.1)
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
+    pg (0.20.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -68,6 +69,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   launchy
+  pg
   pry
   rspec
   sinatra
