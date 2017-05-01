@@ -1,9 +1,8 @@
 require('rspec')
 require('pg')
-require('task')
 require('list')
 
-DB = PG.connect({:dbname => 'todo_test'})
+DB = PG.connect({:dbname => 'to_do_test'})
 
 RSpec.configure do |config|
   config.after(:each) do
@@ -19,7 +18,7 @@ describe(List) do
   end
 
   describe("#name") do
-    it("tells you it's name") do
+    it("tells you its name") do
       list = List.new({:name => "Epicodus stuff", :id => nil})
       expect(list.name()).to(eq("Epicodus stuff"))
     end
@@ -46,7 +45,6 @@ describe(List) do
       list1 = List.new({:name => "Epicodus stuff", :id => nil})
       list2 = List.new({:name => "Epicodus stuff", :id => nil})
       expect(list1).to(eq(list2))
-
     end
   end
 end
