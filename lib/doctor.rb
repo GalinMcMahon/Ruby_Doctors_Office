@@ -1,10 +1,10 @@
 class Doctor
-  attr_reader()
+  attr_reader(:doctor_name)
 
   define_method(:initialize) do |attributes|
     @doctor_name = attributes.fetch(:doctor_name)
-    @specialty = attributes.fetch(:specialty)
-    @id = attributes.fetch(:id)
+    # @specialty = attributes.fetch(:specialty)
+    # @id = attributes.fetch(:id)
   end
 
   define_singleton_method(:all) do
