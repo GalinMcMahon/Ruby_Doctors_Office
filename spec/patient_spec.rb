@@ -17,6 +17,13 @@ describe("#patient_name") do
   end
 end
 
+describe("#doctor_id") do
+  it("lets you read the doctor ID out") do
+    test_patient = Patient.new({:patient_name => "Jones", :doctor_id => 1})
+    expect(test_patient.doctor_id()).to(eq(1))
+  end
+end
+
 # describe(patient) do
 #   describe(".all") do
 #     it("is empty at first") do
@@ -26,24 +33,18 @@ end
 #
 #   describe("#save") do
 #     it("adds a patient to the array of saved patients") do
-#       test_patient = patient.new({:patient_name => "learn SQL", :doctor_id => 1})
+#       test_patient = patient.new({:patient_name => "Jones", :doctor_id => 1})
 #       test_patient.save()
 #       expect(patient.all()).to(eq([test_patient]))
 #     end
 #   end
 #
 #
-#   describe("#doctor_id") do
-#     it("lets you read the doctor ID out") do
-#       test_patient = patient.new({:patient_name => "learn SQL", :doctor_id => 1})
-#       expect(test_patient.doctor_id()).to(eq(1))
-#     end
-#   end
 #
 #   describe("#==") do
 #     it("is the same patient if it has the same patient_name and doctor ID") do
-#       patient1 = patient.new({:patient_name => "learn SQL", :doctor_id => 1})
-#       patient2 = patient.new({:patient_name => "learn SQL", :doctor_id => 1})
+#       patient1 = patient.new({:patient_name => "Jones", :doctor_id => 1})
+#       patient2 = patient.new({:patient_name => "Jones", :doctor_id => 1})
 #       expect(patient1).to(eq(patient2))
 #     end
 #   end
