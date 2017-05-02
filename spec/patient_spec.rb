@@ -39,8 +39,8 @@ end
   end
   describe("#==") do
     it("is the same patient if it has the same patient_name and doctor ID") do
-      patient1 = patient.new({:patient_name => "Jones", :doctor_id => 1})
-      patient2 = patient.new({:patient_name => "Jones", :doctor_id => 1})
+      patient1 = Patient.new({:patient_name => "Jones", :doctor_id => 1, :id => nil})
+      patient2 = Patient.new({:patient_name => "Jones", :doctor_id => 1, :id => nil})
       expect(patient1).to(eq(patient2))
     end
   end

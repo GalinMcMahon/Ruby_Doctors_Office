@@ -25,9 +25,9 @@ class Patient
 #       DB.exec("INSERT INTO patients (patient_name, doctor_id) VALUES ('#{@patient_name}', #{@doctor_id});")
 #     end
 #
-#     define_method(:==) do |another_patient|
-#       self.patient_name().==(another_patient.patient_name()).&(self.doctor_id().==(another_patient.doctor_id()))
-#     end
+    define_method(:==) do |another_patient|
+      self.patient_name().==(another_patient.patient_name()).&(self.doctor_id().==(another_patient.doctor_id()))
+    end
 #
 #
 #   define_singleton_method(:clear) do
