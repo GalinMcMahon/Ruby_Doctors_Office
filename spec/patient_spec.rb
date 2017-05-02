@@ -31,12 +31,11 @@ describe("#id") do
   end
 end
 
-# describe(patient) do
-#   describe(".all") do
-#     it("is empty at first") do
-#       expect(patient.all()).to(eq([]))
-#     end
-#   end
+  describe(".all") do
+    it("is empty at first") do
+      expect(Patient.all()).to(eq([]))
+    end
+  end
 #
 #   describe("#save") do
 #     it("adds a patient to the array of saved patients") do
