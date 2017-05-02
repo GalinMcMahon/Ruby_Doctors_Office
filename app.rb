@@ -1,24 +1,24 @@
 require("sinatra")
 require("sinatra/reloader")
 also_reload("lib/**/*.rb")
-require("./lib/task")
-# require("./lib/list")
+require("./lib/patient")
+# require("./lib/doctor")
 require('pg')
 
-DB = PG.connect({:dbname => 'to_do_test'})
+DB = PG.connect({:dbdoctor_name => 'doctor_office_test'})
 
-get("/") do
-  @tasks = Task.all()
-  erb(:index)
-end
-
-post("/tasks") do
-  description = params.fetch("description") #tasks table
-  # list_id = params.fetch("list_id").to_i() #tasks table
-  # @list = List.find(list_id)
-  # @task = Task.new({:description => description, :list_id => list_id})
-  # @task.save()
-  # task = Task.new(description)
-  # task.save()
-  erb(:output)
-end
+# get("/") do
+#   @patients = patient.all()
+#   erb(:index)
+# end
+#
+# post("/patients") do
+#   patient_name = params.fetch("patient_name") #patients table
+#   # doctor_id = params.fetch("doctor_id").to_i() #patients table
+#   # @doctor = doctor.find(doctor_id)
+#   # @patient = patient.new({:patient_name => patient_name, :doctor_id => doctor_id})
+#   # @patient.save()
+#   # patient = patient.new(patient_name)
+#   # patient.save()
+#   erb(:output)
+# end

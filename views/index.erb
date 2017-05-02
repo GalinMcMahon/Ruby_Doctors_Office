@@ -1,16 +1,16 @@
 <h1>To Do</h1>
 
-<p>Create a new task:</p>
+<p>Create a new patient:</p>
 
-<form action="/tasks" method="post">
-  <label for="description">Task Description</label>
-  <input id="description" name="description" type="text">
-  <button type="submit">Add task</button>
+<form action="/patients" method="post">
+  <label for="patient_name">patient patient_name</label>
+  <input id="patient_name" doctor_name="patient_name" type="text">
+  <button type="submit">Add patient</button>
 </form>
 <hr>
-<p>Here are all your tasks:</p>
+<p>Here are all your patients:</p>
 <ul>
-  <% @tasks.each() do |task| %>
-  <li><%= task.description() %></li>
+  <% @patients.each() do |patient| %>
+  <li><%= patient.patient_name() %></li>
   <% end %>
 </ul>
