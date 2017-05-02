@@ -35,6 +35,14 @@ end
     it("is empty at first") do
       expect(Patient.all()).to(eq([]))
     end
+
+  end
+  describe("#==") do
+    it("is the same patient if it has the same patient_name and doctor ID") do
+      patient1 = patient.new({:patient_name => "Jones", :doctor_id => 1})
+      patient2 = patient.new({:patient_name => "Jones", :doctor_id => 1})
+      expect(patient1).to(eq(patient2))
+    end
   end
 #
 #   describe("#save") do
@@ -47,11 +55,4 @@ end
 #
 #
 #
-#   describe("#==") do
-#     it("is the same patient if it has the same patient_name and doctor ID") do
-#       patient1 = patient.new({:patient_name => "Jones", :doctor_id => 1})
-#       patient2 = patient.new({:patient_name => "Jones", :doctor_id => 1})
-#       expect(patient1).to(eq(patient2))
-#     end
-#   end
 # end
