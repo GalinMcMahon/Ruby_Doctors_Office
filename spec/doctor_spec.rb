@@ -2,7 +2,8 @@ require('rspec')
 require('pg')
 require('doctor')
 
-DB = PG.connect({:dbdoctors => 'doctor_office_test'})
+DB = PG.connect({:dbname => 'doctor_office_test'})
+
 
 RSpec.configure do |config|
   config.after(:each) do
@@ -13,7 +14,7 @@ end
 describe(Doctor) do
   describe(".all") do
     it("starts off with no doctors") do
-      expect(doctor.all()).to(eq([]))
+      expect(Doctor.all()).to(eq([]))
     end
   end
 

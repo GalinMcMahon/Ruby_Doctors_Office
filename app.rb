@@ -1,11 +1,11 @@
-require("sinatra")
-require("sinatra/reloader")
-also_reload("lib/**/*.rb")
-require("./lib/patient")
-# require("./lib/doctor")
-require('pg')
-
-DB = PG.connect({:dbdoctor_name => 'doctor_office_test'})
+# require("sinatra")
+# require("sinatra/reloader")
+# also_reload("lib/**/*.rb")
+# require("./lib/patient")
+# # require("./lib/doctor")
+# require('pg')
+#
+# DB = PG.connect({:dbname => 'doctor_office_test'})
 
 # get("/") do
 #   @patients = patient.all()

@@ -1,7 +1,7 @@
-require('capybara/rspec')
-require('./app')
-Capybara.app = Sinatra::Application
-set(:show_exceptions, false)
+# require('capybara/rspec')
+# require('./app')
+# Capybara.app = Sinatra::Application
+# set(:show_exceptions, false)
 
 # describe('the patient path', {:type => :feature}) do
 #   it('processes the user entry and makes a doctor item') do
