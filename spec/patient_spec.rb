@@ -12,15 +12,22 @@ end
 
 describe("#patient_name") do
   it("lets you read the patient_name out") do
-    test_patient = Patient.new({:patient_name => "Jones", :doctor_id => 1})
+    test_patient = Patient.new({:patient_name => "Jones", :doctor_id => 1, :id =>nil})
     expect(test_patient.patient_name()).to(eq("Jones"))
   end
 end
 
 describe("#doctor_id") do
   it("lets you read the doctor ID out") do
-    test_patient = Patient.new({:patient_name => "Jones", :doctor_id => 1})
+    test_patient = Patient.new({:patient_name => "Jones", :doctor_id => 1, :id =>nil})
     expect(test_patient.doctor_id()).to(eq(1))
+  end
+end
+
+describe("#id") do
+  it("lets you read the patient ID out") do
+    test_patient = Patient.new({:patient_name => "Jones", :doctor_id => 1, :id => nil})
+    expect(test_patient.id()).to(eq(nil))
   end
 end
 

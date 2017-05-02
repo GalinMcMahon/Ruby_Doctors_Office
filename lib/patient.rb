@@ -1,5 +1,5 @@
 class Patient
-  attr_reader(:patient_name, :doctor_id)
+  attr_reader(:patient_name, :doctor_id, :id)
   @@all_patients = []
 
 
@@ -7,6 +7,7 @@ class Patient
     define_method(:initialize) do |attributes|
       @patient_name = attributes.fetch(:patient_name)
       @doctor_id = attributes.fetch(:doctor_id)
+      @id = attributes.fetch(:id)
     end
 #
 #     define_singleton_method(:all) do
