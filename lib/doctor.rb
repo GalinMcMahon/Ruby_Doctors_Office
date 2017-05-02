@@ -1,10 +1,10 @@
 class Doctor
-  attr_reader(:doctor_name)
+  attr_reader(:doctor_name, :id)
 
   define_method(:initialize) do |attributes|
     @doctor_name = attributes.fetch(:doctor_name)
     # @specialty = attributes.fetch(:specialty)
-    # @id = attributes.fetch(:id)
+    @id = attributes.fetch(:id)
   end
 
   define_singleton_method(:all) do
@@ -17,12 +17,12 @@ class Doctor
     end
     doctors
   end
-#
-#   define_method(:save) do
-#     result = DB.exec("INSERT INTO doctors (doctor_name) VALUES ('#{@doctor_name}') RETURNING id;")
-#     @id = result.first().fetch("id").to_i()
-#   end
-#
+
+  # define_method(:save) do
+  #   result = DB.exec("INSERT INTO doctors (doctor_name) VALUES ('#{@doctor_name}') RETURNING id;")
+  #   @id = result.first().fetch("id").to_i()
+  # end
+
 #   define_method(:==) do |another_doctor|
 #     self.doctor_name().==(another_doctor.doctor_name()).&(self.id().==(another_doctor.id()))
 #   end

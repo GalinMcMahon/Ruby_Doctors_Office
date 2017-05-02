@@ -28,18 +28,17 @@ describe(Doctor) do
   describe("#id") do
     it("sets its ID when you save it") do
       test_doctor = Doctor.new({:doctor_name => "Dr. Jones", :id => nil})
-      test_doctor.save()
-      expect(test_doctor.id()).to(be_an_instance_of(Fixnum))
+      expect(test_doctor.id()).to(eq(nil))
     end
   end
   #
-  # describe("#save") do
-  #   it("lets you save doctors to the database") do
-  #     doctor = doctor.new({:doctor_name => "Dr. Jones", :id => nil})
-  #     doctor.save()
-  #     expect(doctor.all()).to(eq([doctor]))
-  #   end
-  # end
+  describe("#save") do
+    it("lets you save doctors to the database") do
+      test_doctor = Doctor.new({:doctor_name => "Dr. Jones", :id => nil})
+      test_doctor.save()
+      expect(test_doctor.all()).to(eq([test_doctor]))
+    end
+  end
   #
   # describe("#==") do
   #   it("is the same doctor if it has the same doctor_name") do
