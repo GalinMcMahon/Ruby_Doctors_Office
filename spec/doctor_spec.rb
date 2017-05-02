@@ -24,14 +24,14 @@ describe(Doctor) do
       expect(test_doctor.doctor_name()).to(eq("Dr. Jones"))
     end
   end
-  #
-  # describe("#id") do
-  #   it("sets its ID when you save it") do
-  #     doctor = Doctor.new({:doctor_name => "Dr. Jones", :id => nil})
-  #     doctor.save()
-  #     expect(doctor.id()).to(be_an_instance_of(Fixnum))
-  #   end
-  # end
+
+  describe("#id") do
+    it("sets its ID when you save it") do
+      test_doctor = Doctor.new({:doctor_name => "Dr. Jones", :id => nil})
+      test_doctor.save()
+      expect(test_doctor.id()).to(be_an_instance_of(Fixnum))
+    end
+  end
   #
   # describe("#save") do
   #   it("lets you save doctors to the database") do
