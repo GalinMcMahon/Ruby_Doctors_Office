@@ -19,11 +19,11 @@ class Patient
     end
     patients
   end
-#
-    define_method(:save) do
-      DB.exec("INSERT INTO patients (patient_name, doctor_id, birthday) VALUES ('#{@patient_name}', #{@doctor_id}, '#{@birthday}');")
-    end
-#
+
+  define_method(:save) do
+    DB.exec("INSERT INTO patients (patient_name, doctor_id, birthday) VALUES ('#{@patient_name}', #{@doctor_id}, '#{@birthday}');")
+  end
+
   define_method(:==) do |another_patient|
     self.patient_name().==(another_patient.patient_name()).&(self.doctor_id().==(another_patient.doctor_id()))
   end

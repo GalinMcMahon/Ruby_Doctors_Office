@@ -38,28 +38,24 @@ describe("#birthday") do
   end
 end
 
-  describe(".all") do
-    it("is empty at first") do
-      expect(Patient.all()).to(eq([]))
-    end
+describe(".all") do
+  it("is empty at first") do
+    expect(Patient.all()).to(eq([]))
+  end
+end
 
+describe("#==") do
+  it("is the same patient if it has the same patient_name and doctor ID") do
+    patient1 = Patient.new({:patient_name => "Jones", :doctor_id => 1, :id => nil, :birthday => "1975-01-01"})
+    patient2 = Patient.new({:patient_name => "Jones", :doctor_id => 1, :id => nil, :birthday => "1975-01-01"})
+    expect(patient1).to(eq(patient2))
   end
-  describe("#==") do
-    it("is the same patient if it has the same patient_name and doctor ID") do
-      patient1 = Patient.new({:patient_name => "Jones", :doctor_id => 1, :id => nil, :birthday => "1975-01-01"})
-      patient2 = Patient.new({:patient_name => "Jones", :doctor_id => 1, :id => nil, :birthday => "1975-01-01"})
-      expect(patient1).to(eq(patient2))
-    end
+end
+
+describe("#save") do
+  it("adds a patient to the array of saved patients") do
+    test_patient = Patient.new({:patient_name => "Jones", :doctor_id => 1, :id => nil, :birthday => "1975-01-01"})
+    test_patient.save()
+    expect(Patient.all()).to(eq([test_patient]))
   end
-#
-  describe("#save") do
-    it("adds a patient to the array of saved patients") do
-      test_patient = Patient.new({:patient_name => "Jones", :doctor_id => 1, :id => nil, :birthday => "1975-01-01"})
-      test_patient.save()
-      expect(Patient.all()).to(eq([test_patient]))
-    end
-  end
-#
-#
-#
-# end
+end

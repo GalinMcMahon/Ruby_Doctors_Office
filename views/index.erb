@@ -1,16 +1,10 @@
-<h1>To Do</h1>
-
-<p>Create a new patient:</p>
-
-<form action="/patients" method="post">
-  <label for="patient_name">patient patient_name</label>
-  <input id="patient_name" doctor_name="patient_name" type="text">
-  <button type="submit">Add patient</button>
-</form>
+<h1>Doctor's Office</h1>
 <hr>
-<p>Here are all your patients:</p>
+<p>Here are all your doctors:</p>
 <ul>
-  <% @patients.each() do |patient| %>
-  <li><%= patient.patient_name() %></li>
+  <% @doctors.each() do |doctor| %>
+  <li><%= doctor.doctor_name() %></li>
   <% end %>
 </ul>
+
+<p><a href="/new_doctor">Add a new doctor</a></p>
