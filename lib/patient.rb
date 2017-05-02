@@ -1,5 +1,5 @@
 class Patient
-  attr_reader(:patient_name)
+  attr_reader(:patient_name, :doctor_id)
   @@all_patients = []
 
 

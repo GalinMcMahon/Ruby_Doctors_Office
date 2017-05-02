@@ -12,7 +12,7 @@ end
 
 describe("#patient_name") do
   it("lets you read the patient_name out") do
-    test_patient = Patient.new({:patient_name => "Jones"})
+    test_patient = Patient.new({:patient_name => "Jones", :doctor_id => 1})
     expect(test_patient.patient_name()).to(eq("Jones"))
   end
 end
