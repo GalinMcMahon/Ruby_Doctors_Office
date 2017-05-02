@@ -20,25 +20,34 @@ describe(Doctor) do
 
   describe("#doctor_name") do
     it("tells you its doctor_name") do
-      test_doctor = Doctor.new({:doctor_name => "Dr. Jones", :id => nil})
+      test_doctor = Doctor.new({:doctor_name => "Dr. Jones", :id => nil, :specialty => "Oncologist"})
       expect(test_doctor.doctor_name()).to(eq("Dr. Jones"))
     end
   end
 
   describe("#id") do
     it("sets its ID when you save it") do
-      test_doctor = Doctor.new({:doctor_name => "Dr. Jones", :id => nil})
+      test_doctor = Doctor.new({:doctor_name => "Dr. Jones", :id => nil, :specialty => "Oncologist"})
       expect(test_doctor.id()).to(eq(nil))
     end
   end
-  #
-  describe("#save") do
-    it("lets you save doctors to the database") do
-      test_doctor = Doctor.new({:doctor_name => "Dr. Jones", :id => nil})
-      test_doctor.save()
-      expect(test_doctor.all()).to(eq([test_doctor]))
+
+  describe("#specialty") do
+    it("adds specialty") do
+      test_doctor = Doctor.new({:doctor_name => "Dr. Jones", :id => nil, :specialty => "Oncologist"})
+      expect(test_doctor.specialty()).to(eq("Oncologist"))
     end
   end
+
+
+  #
+  # describe("#save") do
+  #   it("lets you save doctors to the database") do
+  #     test_doctor = Doctor.new({:doctor_name => "Dr. Jones", :id => nil})
+  #     test_doctor.save()
+  #     expect(test_doctor.all()).to(eq([test_doctor]))
+  #   end
+  # end
   #
   # describe("#==") do
   #   it("is the same doctor if it has the same doctor_name") do
