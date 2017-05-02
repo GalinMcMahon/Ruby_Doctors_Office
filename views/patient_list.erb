@@ -1,0 +1,19 @@
+<h1>PATIENTS LIST</h1>
+
+<h3> This doctor's patients:</h3>
+
+<!-- <ul style="list-style: none;">
+  <% @doctor.patients.each() do |patient| %>
+  <li><a href="/patient_list/<%= patient.id() %>"><%= patient.patient_name() %></a></li>
+  <% end %>
+</ul> -->
+
+<form action="/new_patient" method="post">
+  <label for="patient_name">Patient's Name</label>
+  <input name="patient_name" type="text">
+  <label for="birthday">Birthday</label>
+  <input name="birthday" type="date">
+  <button type="submit">Add patient</button>
+</form>
+
+<p><a href="/" >Home</a></p>

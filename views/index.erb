@@ -1,9 +1,9 @@
 <h1>Doctor's Office</h1>
 <hr>
 <p>Here are all your doctors:</p>
-<ul>
+<ul style="list-style: none;">
   <% @doctors.each() do |doctor| %>
-  <li><%= doctor.doctor_name() %></li>
+  <li><a href="/patient_list/<%= doctor.id() %>"><%= doctor.doctor_name() %></a></li>
   <% end %>
 </ul>
 

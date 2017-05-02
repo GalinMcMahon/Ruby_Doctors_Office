@@ -14,14 +14,16 @@ class Patient
     patients = []
     returned_patients.each() do |patient|
       patient_name = patient.fetch("patient_name")
+      birthday = patient.fetch("birthday")
       doctor_id = patient.fetch("doctor_id").to_i() # The information comes out of the database as a string.
-      patients.push(Patient.new({:patient_name => patient_name, :doctor_id => doctor_id, :id => nil, :birthday => "1975-01-01"}))
+      patients.push(Patient.new({:patient_name => patient_name, :doctor_id => doctor_id, :id => nil, :birthday => birthday}))
     end
     patients
   end
 
   define_method(:save) do
-    DB.exec("INSERT INTO patients (patient_name, doctor_id, birthday) VALUES ('#{@patient_name}', #{@doctor_id}, '#{@birthday}');")
+    DB.exec("INSERT INTO patients (patient_name, birthday) VALUES ('#{@patient_name}', '#{@birthday}') RETURNING id;")
+    # @id = result.first().fetch("id").to_i()
   end
 
   define_method(:==) do |another_patient|
