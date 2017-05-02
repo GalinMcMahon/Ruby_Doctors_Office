@@ -1,5 +1,5 @@
 class Doctor
-  attr_reader(:doctor_name)
+  attr_reader()
 
   define_method(:initialize) do |attributes|
     @doctor_name = attributes.fetch(:doctor_name)

@@ -18,12 +18,12 @@ describe(Doctor) do
     end
   end
 
-  # describe("#doctor_name") do
-  #   it("tells you its doctor_name") do
-  #     doctor = doctor.new({:doctor_name => "Epicodus stuff", :id => nil})
-  #     expect(doctor.doctor_name()).to(eq("Epicodus stuff"))
-  #   end
-  # end
+  describe("#doctor_name") do
+    it("tells you its doctor_name") do
+      doctor = doctor.new({:doctor_name => "Epicodus stuff", :id => nil})
+      expect(doctor.doctor_name()).to(eq("Epicodus stuff"))
+    end
+  end
   #
   # describe("#id") do
   #   it("sets its ID when you save it") do
