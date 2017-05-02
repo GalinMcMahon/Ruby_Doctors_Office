@@ -1,13 +1,13 @@
-# class Patient
-#   attr_reader(:patient_name, :id, :doctor_id)
-#   @@all_patients = []
-#
-#
-#
-#     define_method(:initialize) do |attributes|
-#       @patient_name = attributes.fetch(:patient_name)
-#       @doctor_id = attributes.fetch(:doctor_id)
-#     end
+class Patient
+  attr_reader(:patient_name)
+  @@all_patients = []
+
+
+
+    define_method(:initialize) do |attributes|
+      @patient_name = attributes.fetch(:patient_name)
+      # @doctor_id = attributes.fetch(:doctor_id)
+    end
 #
 #     define_singleton_method(:all) do
 #       returned_patients = DB.exec("SELECT * FROM patients;")
@@ -43,4 +43,4 @@
 #     end
 #     patients
 #   end
-# end
+end

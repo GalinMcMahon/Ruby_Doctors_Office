@@ -1,14 +1,21 @@
-# require("rspec")
-# require("pg")
-# require("patient")
-#
-# DB = PG.connect({:dbname => 'doctor_office_test'})
-#
-# RSpec.configure do |config|
-#   config.after(:each) do
-#     DB.exec("DELETE FROM patients *;")
-#   end
-# end
+require("rspec")
+require("pg")
+require("patient")
+
+DB = PG.connect({:dbname => 'doctor_office_test'})
+
+RSpec.configure do |config|
+  config.after(:each) do
+    DB.exec("DELETE FROM patients *;")
+  end
+end
+
+describe("#patient_name") do
+  it("lets you read the patient_name out") do
+    test_patient = Patient.new({:patient_name => "Jones"})
+    expect(test_patient.patient_name()).to(eq("Jones"))
+  end
+end
 
 # describe(patient) do
 #   describe(".all") do
@@ -25,12 +32,6 @@
 #     end
 #   end
 #
-#   describe("#patient_name") do
-#     it("lets you read the patient_name out") do
-#       test_patient = patient.new({:patient_name => "learn SQL", :doctor_id => 1})
-#       expect(test_patient.patient_name()).to(eq("learn SQL"))
-#     end
-#   end
 #
 #   describe("#doctor_id") do
 #     it("lets you read the doctor ID out") do
